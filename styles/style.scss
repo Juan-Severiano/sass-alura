@@ -1,3 +1,6 @@
+$main-color: blueviolet;
+$secundary-color: aquamarine;
+
 body {
     margin: 0;
     padding: 0;
@@ -8,22 +11,22 @@ body {
     display: flex;
     .left {
         width: 50%;
-        background-color: blueviolet;
+        background-color: $main-color;
         .text {
             margin-top: 40%;
             font-size: 150px;
             text-align: center;
-            color: aquamarine;
+            color: $secundary-color;
         }
     }
     .right {
         width: 50%;
-        background-color: aquamarine;
+        background-color: $secundary-color;
         .text {
             margin-top: 40%;
             font-size: 150px;
             text-align: center;
-            color: blueviolet;
+            color: $main-color;
         }
     }
 }
