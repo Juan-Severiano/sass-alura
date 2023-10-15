@@ -1,32 +1,33 @@
 $main-color: blueviolet;
 $secundary-color: aquamarine;
 
-body {
+@mixin reset {
     margin: 0;
     padding: 0;
+}
+
+@mixin color-text($bg-color, $text-color) {
+    width: 50%;
+    background-color: $bg-color;
+    .text {
+        margin-top: 40%;
+        font-size: 150px;
+        text-align: center;
+        color: $text-color;
+    }
+}
+
+body {
+    @include reset();
 }
 
 .container {
     height: 100vh;
     display: flex;
     .left {
-        width: 50%;
-        background-color: $main-color;
-        .text {
-            margin-top: 40%;
-            font-size: 150px;
-            text-align: center;
-            color: $secundary-color;
-        }
+        @include color-text($main-color, $secundary-color)
     }
     .right {
-        width: 50%;
-        background-color: $secundary-color;
-        .text {
-            margin-top: 40%;
-            font-size: 150px;
-            text-align: center;
-            color: $main-color;
-        }
+        @include color-text($secundary-color, $main-color)
     }
 }
